@@ -4,11 +4,12 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
+
 let shuffleQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
+  currentQuestionIndex++ 
   setNextQuestion()
 })
 
@@ -19,7 +20,7 @@ function startGame() {
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
-}
+} 
 
 function setNextQuestion() {
   resetState()
@@ -80,20 +81,42 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'What is 2+2?',
+    question: 'Is Javascript fun?',
     answers: [
-      {text: '4', correct: true},
-      {text: '22', correct: false}
+      {text: 'Yes', correct: true},
+      {text: 'No', correct: false}
     ]
   },
 
   {
-    question: 'Who is Randy Marsh?',
+    question: 'If a variable is declared outside of a function is it globally scoped or locally scoped?',
     answers: [
-      {text: 'Lorde', correct: true},
-      {text: 'Adele', correct: false},
-      {text: 'Ice Cube', correct: false},
-      {text: 'Lady Gaga', correct: false},
+      {text: 'Globally', correct: true},
+      {text: 'Locally', correct: false},
     ]
-  }
+  },
+
+  {
+    question: 'The let variable declaration is blocked scoped or gloablly scoped?',
+    answers: [
+      {text: 'Globally', correct: false},
+      {text: 'Blocked', correct: true},
+    ]
+  },
+
+  {
+    question: 'Can const declarations be accessed outside the block they were created in?',
+    answers: [
+      {text: 'Yes', correct: false},
+      {text: 'No', correct: true},
+    ]
+  },
+
+  {
+    question: 'Can var variables be updated and re-declared within its scope?',
+    answers: [
+      {text: 'Yes', correct: true},
+      {text: 'No', correct: false},
+    ]
+  },
 ]
